@@ -1,6 +1,6 @@
 # Generative AI for Beginners .NET - A Course
 
-## Practical lessons teaching you how to build Generative AI applications in .NET
+## Practical lessons teaching you how to build Generative AI applications in .NET, edited for testing, 
 
 [![GitHub license](https://img.shields.io/github/license/microsoft/Generative-AI-For-beginners-dotnet.svg)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet/blob/main/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/Generative-AI-For-Beginners-Dotnet.svg)](https://github.com/microsoft/Generative-AI-For-Beginners-Dotnet/graphs/contributors/)
@@ -18,7 +18,7 @@
 
 ![Generative AI for Beginners .NET logo](./images/main-logo.jpg)
 
-Welcome to **Generative AI for Beginners .NET**, the hands-on course for .NET developers diving into the world of Generative AI!
+Welcome to **BIG CHANGE FOR TESTTING**, the hands-on course for .NET developers diving into the world of Generative AI!
 
 This isn’t your typical “here’s some theory, good luck” course. This repository is all about **real-world applications** and **live coding** to empower .NET developers to take full advantage of Generative AI.
 
