@@ -14,7 +14,7 @@
 
 [![Azure AI Community Discord](https://img.shields.io/discord/1113626258182504448?label=Azure%20AI%20Community%20Discord)](https://aka.ms/ai-discord/dotnet)
 
-[![Azure AI Foundry GitHub Discussions](https://img.shields.io/badge/Discussions-Azure%20AI%20Foundry-blueviolet?logo=github&style=for-the-badge)](https://aka.ms/ai-discussions/dotnet)
+[![Microsoft Foundry GitHub Discussions](https://img.shields.io/badge/Discussions-Microsoft%20Foundry-blueviolet?logo=github&style=for-the-badge)](https://aka.ms/ai-discussions/dotnet)
 
 ![Generative AI for Beginners .NET logo](./images/main-logo.jpg)
 
@@ -32,11 +32,36 @@ Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/e
 
 We're constantly improving this course with the latest AI tools, models, and practical samples:
 
-- **🤖 NEW! Microsoft Agent Framework (AgentFx) Lesson**
+- **🤖 NEW! Claude Models with Agent Framework**
+
+  Integrate **Claude models** from Microsoft Foundry with Microsoft Agent Framework! Three comprehensive samples demonstrate:
+  - Basic console chat with Claude using `ChatClientAgent`
+  - Conversation persistence with thread serialization/deserialization
+  - Interactive Blazor web chat application with modern UI
+  - Custom `ClaudeToOpenAIMessageHandler` for seamless API bridging
+  - Support for Claude Haiku, Sonnet, and Opus models
+  
+  👉 [Explore the Claude AgentFx Samples](./samples/AgentFx/CLAUDE-SAMPLES-README.md)
+  
+  Plus a foundational Claude integration sample:
+  
+  👉 [BasicChat with Claude via Microsoft Foundry](./samples/CoreSamples/BasicChat-11FoundryClaude/)
+
+- **🌐 AG-UI Integration Sample**
+
+  Check out our new Agent Framework sample demonstrating **AG-UI** (Agent Gateway User Interface) - the distributed agent architecture pattern! This sample shows how to:
+  - Separate AI agent backend from Blazor frontend for better scalability
+  - Use `AGUIChatClient` to communicate with remote agents over HTTP
+  - Implement RAG with semantic search and PDF document ingestion
+  - Orchestrate distributed applications with .NET Aspire
+  
+  👉 [Explore the AG-UI Sample](./samples/AgentFx/AgentFx-AIWebChatApp-AG-UI/README.md)
+
+- **🤖 Microsoft Agent Framework (AgentFx) Lesson**
 
   We've added a comprehensive new lesson on the Microsoft Agent Framework - the next evolution in .NET AI development! Learn how to:
   - Build orchestrated AI agent systems with specialized roles
-  - Create multi-model workflows combining GitHub Models, Azure AI Foundry, and Ollama
+  - Create multi-model workflows combining GitHub Models, Microsoft Foundry, and Ollama
   - Integrate with Model Context Protocol (MCP) for enhanced capabilities
   - Design sequential and concurrent agent workflows for complex tasks
   
@@ -66,7 +91,7 @@ You'll learn how to implement Generative AI into .NET projects, from basic text 
 | #   | **Lesson Link** | **Description** |
 | --- | --- | --- |
 | 01  | [**Intro to Generative AI Basics for .NET Developers**](./01-IntroToGenAI/readme.md) | <ul><li>Overview of generative models and their applications in .NET</li></ul> |
-| 02  | [**Setting Up for .NET Development with Generative AI**](./02-SetupDevEnvironment/readme.md) | <ul><li>Using libraries like **Microsoft.Extensions.AI** and **Semantic Kernel**.</li><li>Setup providers like GitHub Models, Azure AI Foundry, and local development like Ollama.</li></ul> |
+| 02  | [**Setting Up for .NET Development with Generative AI**](./02-SetupDevEnvironment/readme.md) | <ul><li>Using libraries like **Microsoft.Extensions.AI** and **Semantic Kernel**.</li><li>Setup providers like GitHub Models, Microsoft Foundry, and local development like Ollama.</li></ul> |
 | 03  | [**Core Generative AI Techniques with .NET**](./03-CoreGenerativeAITechniques/readme.md) | <ul><li>Text generation and conversational flows.</li><li> Multimodal capabilities (vision and audio).</li><li>Agents</li></ul> |
 | 04  | [**Practical .NET Generative AI Samples**](./04-PracticalSamples/readme.md) | <ul><li>Complete samples demonstrating GenAI in real-life scenarios</li><li>Semantic search applications.</li><li>Multiple agent applications</li></ul> |
 | 05  | [**.NET Apps created using GenAI tools (aka: Vibe Coding Prompts)**](./05-AppCreatedWithGenAI/readme.md) | <ul><li>Sample .NET apps generated using Generative AI tools like GitHub Copilot Agent.</li><li>First sample: **Retro Invaders retro console game 👾**</li></ul> |
@@ -134,22 +159,25 @@ We have a lot of other content to help your learning journey. Check out:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### Azure / Edge / MCP / Agents
+
 [![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
+
 ### Generative AI Series
+
 [![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
+
 ### Core Learning
+
 [![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
@@ -159,8 +187,9 @@ We have a lot of other content to help your learning journey. Check out:
 [![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
+
 ### Copilot Series
+
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
@@ -172,8 +201,8 @@ We have a lot of other content to help your learning journey. Check out:
 
 If you get stuck or have any questions about building AI apps, join:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 If you have product feedback or errors while building visit:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)

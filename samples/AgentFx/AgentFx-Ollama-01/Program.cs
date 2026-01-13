@@ -5,14 +5,10 @@ using OllamaSharp;
 IChatClient chatClient =
     new OllamaApiClient(new Uri("http://localhost:11434/"), "llama3.2");
 
-AIAgent writer = new ChatClientAgent(
-    chatClient,
-    new ChatClientAgentOptions
-    {
-        Name = "Writer",
-        Instructions = "Write short stories that are engaging and creative, and always add bad jokes to them."
-    });
+AIAgent writer = chatClient.CreateAIAgent(
+    name: "Writer",
+    instructions: "Write short stories that are engaging and creative, and always add bad jokes to them.");
 
-AgentRunResponse response = await writer.RunAsync("Write a short story about .NET Conf.");
+AgentRunResponse response = await writer.RunAsync("Write a long story about Lima Peru en Spanish");
 
 Console.WriteLine(response.Text);

@@ -11,7 +11,7 @@ using OpenTelemetry.Trace;
 // ================================================================
 // This demo requires the following user secrets or environment variables:
 //
-// REQUIRED - Azure AI Foundry Persistent Agent (Agent 1 - Researcher):
+// REQUIRED - Microsoft Foundry Persistent Agent (Agent 1 - Researcher):
 //      "AZURE_FOUNDRY_PROJECT_ENDPOINT": "https://<your-project>.services.ai.azure.com/"
 //      "deploymentName": "your-model-deployment-name" (default: "gpt-5-mini")
 //
@@ -54,7 +54,7 @@ using OpenTelemetry.Trace;
 
 Console.WriteLine("=== Microsoft Agent Framework - Multi-Model Orchestration Demo ===");
 Console.WriteLine("This demo showcases 3 agents working together:");
-Console.WriteLine("  1. Researcher (Azure AI Foundry Agent) - Researches topics");
+Console.WriteLine("  1. Researcher (Microsoft Foundry Agent) - Researches topics");
 Console.WriteLine("  2. Writer (Azure OpenAI or GitHub Models) - Writes content based on research");
 Console.WriteLine("  3. Reviewer (Ollama - llama3.2) - Reviews and provides feedback");
 Console.WriteLine();
@@ -66,7 +66,7 @@ using var tracerProvider = Sdk.CreateTracerProviderBuilder()
     .Build();
 
 // ===== Agent 1: Researcher using Azure OpenAI or GitHub Models =====
-Console.WriteLine("Setting up Agent 1: Researcher (Azure AI Foundry Agent)...");
+Console.WriteLine("Setting up Agent 1: Researcher (Microsoft Foundry Agent)...");
 
 AIAgent researcher = AIFoundryAgentsProvider.CreateAIAgent(
     name: "Researcher",
@@ -80,13 +80,9 @@ Console.WriteLine("Setting up Agent 2: Writer (Azure OpenAI or GitHub Models)...
 
 IChatClient azureChatClient = ChatClientProvider.GetChatClient();
 
-AIAgent writer = new ChatClientAgent(
-    azureChatClient,
-    new ChatClientAgentOptions
-    {
-        Name = "Writer",
-        Instructions = "You are a creative writer. Take the research provided and write an engaging, well-structured article. Make it informative yet entertaining."
-    })
+AIAgent writer = azureChatClient.CreateAIAgent(
+    name: "Writer",
+    instructions: "You are a creative writer. Take the research provided and write an engaging, well-structured article. Make it informative yet entertaining.")
     .AsBuilder()
     .UseOpenTelemetry(sourceName: "agent-telemetry-source")
     .Build();
@@ -96,13 +92,9 @@ AIAgent writer = new ChatClientAgent(
 Console.WriteLine("Setting up Agent 3: Reviewer (Ollama)...");
 IChatClient ollamaChatClient = ChatClientProvider.GetChatClientOllama();
 
-AIAgent reviewer = new ChatClientAgent(
-    ollamaChatClient,
-    new ChatClientAgentOptions
-    {
-        Name = "Reviewer",
-        Instructions = "You are an editor and reviewer. Analyze the article provided, give constructive feedback, and suggest improvements for clarity, grammar, and engagement."
-    })
+AIAgent reviewer = ollamaChatClient.CreateAIAgent(
+    name: "Reviewer",
+    instructions: "You are an editor and reviewer. Analyze the article provided, give constructive feedback, and suggest improvements for clarity, grammar, and engagement.")
     .AsBuilder()
     .UseOpenTelemetry(sourceName: "agent-telemetry-source")
     .Build();
@@ -133,11 +125,11 @@ Console.WriteLine(new string('=', 80));
 Console.WriteLine("Workflow completed successfully!");
 
 Console.WriteLine("=== Clean Up ===");
-Console.WriteLine("Do you want to delete the Researcher agent in Azure AI Foundry? (yes/no)");
+Console.WriteLine("Do you want to delete the Researcher agent in Microsoft Foundry? (yes/no)");
 string deleteResponse = Console.ReadLine()?.Trim().ToLower() ?? "no";
 if (deleteResponse == "yes" || deleteResponse == "y")
 {
-    Console.WriteLine("Deleting Researcher agent in Azure AI Foundry...");
+    Console.WriteLine("Deleting Researcher agent in Microsoft Foundry...");
     AIFoundryAgentsProvider.DeleteAIAgentInAIFoundry(researcher);
     Console.WriteLine("Researcher agent deleted successfully.");
 }
